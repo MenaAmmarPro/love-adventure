@@ -8,7 +8,7 @@
   <meta property="og:title" content="Adventure Machine — a quest for two">
   <meta property="og:description" content="Spin a little quest for Ammar and Mena — where, what, and one silly twist.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#faf7f5">
+  <meta name="theme-color" content="#090b20">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
@@ -16,21 +16,23 @@
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body data-page="adventure">
+  <canvas id="starfield" aria-hidden="true"></canvas>
+
   <header class="site-header">
-    <div class="container">
-      <a class="brand" href="https://menaammarpro.github.io/">&#9829; Mena &amp; Ammar</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="https://menaammarpro.github.io/">All projects</a>
-        <a href="https://menaammarpro.github.io/love-hug/">Hug machine</a>
-        <a href="https://menaammarpro.github.io/love-chat/">Chat</a>
-      </nav>
-    </div>
+    <a class="brand" href="https://menaammarpro.github.io/">&#9829; Mena &amp; Ammar</a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">Menu</button>
+    <nav class="nav-links" aria-label="Main">
+      <a href="https://menaammarpro.github.io/">All projects</a>
+      <a href="https://menaammarpro.github.io/love-hug/">Hug machine</a>
+      <a href="https://menaammarpro.github.io/love-chat/">Chat</a>
+      <button class="theme-toggle" type="button" aria-label="Toggle color theme">Theme</button>
+    </nav>
   </header>
 
-  <main class="container">
+  <main>
     <section class="hero">
       <p class="eyebrow">One spin, one quest</p>
-      <h1>The adventure machine</h1>
+      <h1>The adventure <span>machine</span></h1>
       <p class="subtitle">Where to go, what to do, and one silly twist. No take-backs.</p>
     </section>
 
@@ -55,7 +57,7 @@
         </div>
       </div>
 
-      <button id="spin" class="btn btn-primary spin-btn" type="button">Spin the quest</button>
+      <button id="spin" class="button button-primary spin-btn" type="button">Spin the quest</button>
       <p id="spin-note" class="spin-note">&nbsp;</p>
     </section>
 
@@ -63,8 +65,8 @@
       <h2 id="quest-title">Your quest</h2>
       <p id="quest-text" class="quest-text">Press the button and let the machine choose.</p>
       <div class="quest-actions">
-        <button id="accept" class="btn btn-primary" type="button">We did it!</button>
-        <button id="share-quest" class="btn btn-ghost" type="button">Send this quest</button>
+        <button id="accept" class="button button-primary" type="button">We did it!</button>
+        <button id="share-quest" class="button button-ghost" type="button">Send this quest</button>
       </div>
       <p id="share-note" class="share-note">&nbsp;</p>
     </section>
@@ -102,10 +104,8 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>Made with love, just for you <span aria-hidden="true">&#9829;</span></p>
-      <p class="footer-note">Ammar &rarr; Mena &middot; Karachi &rarr; Bucharest</p>
-    </div>
+    <p>Made with love, just for you <span>&#9829;</span></p>
+    <p class="footer-small">Ammar &rarr; Mena &middot; Karachi &rarr; Bucharest</p>
   </footer>
 
   <button id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>&#8679;</button>
