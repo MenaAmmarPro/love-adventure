@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adventure Machine — a quest for two</title>
+  <meta name="description" content="Spin a little quest for Ammar and Mena — where, what, and one silly twist.">
+  <meta property="og:title" content="Adventure Machine — a quest for two">
+  <meta property="og:description" content="Spin a little quest for Ammar and Mena — where, what, and one silly twist.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#faf7f5">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body data-page="adventure">
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="https://menaammarpro.github.io/">&#9829; Mena &amp; Ammar</a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="https://menaammarpro.github.io/">All projects</a>
+        <a href="https://menaammarpro.github.io/love-hug/">Hug machine</a>
+        <a href="https://menaammarpro.github.io/love-chat/">Chat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">One spin, one quest</p>
+      <h1>The adventure machine</h1>
+      <p class="subtitle">Where to go, what to do, and one silly twist. No take-backs.</p>
+    </section>
+
+    <p id="arrive-note" class="arrive-note" hidden></p>
+
+    <section class="machine">
+      <div class="reels">
+        <div class="reel" id="reel-where">
+          <span class="reel-tag">Where</span>
+          <span class="reel-text" id="where-text">—</span>
+          <button class="lock" id="lock-where" type="button" aria-pressed="false" aria-label="Lock Where">&#128275;</button>
+        </div>
+        <div class="reel" id="reel-what">
+          <span class="reel-tag">What</span>
+          <span class="reel-text" id="what-text">—</span>
+          <button class="lock" id="lock-what" type="button" aria-pressed="false" aria-label="Lock What">&#128275;</button>
+        </div>
+        <div class="reel" id="reel-twist">
+          <span class="reel-tag">Twist</span>
+          <span class="reel-text" id="twist-text">—</span>
+          <button class="lock" id="lock-twist" type="button" aria-pressed="false" aria-label="Lock Twist">&#128275;</button>
+        </div>
+      </div>
+
+      <button id="spin" class="btn btn-primary spin-btn" type="button">Spin the quest</button>
+      <p id="spin-note" class="spin-note">&nbsp;</p>
+    </section>
+
+    <section class="panel quest-panel">
+      <h2 id="quest-title">Your quest</h2>
+      <p id="quest-text" class="quest-text">Press the button and let the machine choose.</p>
+      <div class="quest-actions">
+        <button id="accept" class="btn btn-primary" type="button">We did it!</button>
+        <button id="share-quest" class="btn btn-ghost" type="button">Send this quest</button>
+      </div>
+      <p id="share-note" class="share-note">&nbsp;</p>
+    </section>
+
+    <section class="stats-row">
+      <div class="stat-card">
+        <span class="stat-num" id="spins">0</span>
+        <span class="stat-label">spins</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="done-count">0</span>
+        <span class="stat-label">quests done</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="last-done">never</span>
+        <span class="stat-label">last adventure</span>
+      </div>
+    </section>
+
+    <section class="panel log-panel">
+      <h2>Our little logbook</h2>
+      <ul id="quest-log" class="quest-log">
+        <li class="empty-note">No adventures yet — that changes today.</li>
+      </ul>
+    </section>
+
+    <section class="panel info-panel">
+      <h2>House rules</h2>
+      <ul>
+        <li>You can <strong>lock</strong> a reel you love and spin the rest.</li>
+        <li><strong>Send this quest</strong> mails the exact same spin with a link, so nobody cheats.</li>
+        <li><strong>We did it!</strong> writes it into the logbook — bragging rights only.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Made with love, just for you <span aria-hidden="true">&#9829;</span></p>
+      <p class="footer-note">Ammar &rarr; Mena &middot; Karachi &rarr; Bucharest</p>
+    </div>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" hidden>&#8679;</button>
+  <script src="js/theme-main.js" defer></script>
+  <script src="js/effects.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
