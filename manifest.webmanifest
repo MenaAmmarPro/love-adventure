@@ -1,0 +1,14 @@
+{
+  "name": "Adventure Machine — a quest for two",
+  "short_name": "Adventures",
+  "description": "Spin a little quest for Ammar and Mena — where, what, and one silly twist.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#faf7f5",
+  "theme_color": "#faf7f5",
+  "icons": [
+    { "src": "assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "assets/og-image.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
