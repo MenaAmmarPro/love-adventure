@@ -1,6 +1,8 @@
 /* love-adventure — page styles on top of the shared love theme */
 
-main.container {
+main {
+  width: min(1000px, calc(100% - 40px));
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -8,28 +10,35 @@ main.container {
 }
 
 .hero {
+  min-height: auto;
+  padding: 2.4rem 1rem 0;
   text-align: center;
-  padding: 2rem 1rem 0;
 }
 
-.eyebrow {
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  color: var(--muted, #8a847e);
-  margin: 0 0 0.4rem;
-}
+.eyebrow { color: var(--pink); }
 
-.hero h1 { margin: 0 0 0.4rem; }
-.subtitle { margin: 0; color: var(--muted, #8a847e); }
+.hero h1 { margin: 0.2rem 0 0.4rem; }
+.subtitle { margin: 0; color: var(--muted); }
 
 .arrive-note {
   text-align: center;
-  background: #eadfce;
+  background: rgba(255, 159, 207, 0.14);
+  border: 1px solid var(--pink-strong);
   border-radius: 999px;
   padding: 0.55rem 1rem;
   margin: 0 auto;
-  max-width: 30rem;
+  max-width: 32rem;
+  color: var(--text);
+}
+
+/* ---------- shared card ---------- */
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 1.3rem 1.4rem;
+  box-shadow: var(--shadow);
 }
 
 /* ---------- machine ---------- */
@@ -52,8 +61,8 @@ main.container {
 
 .reel {
   position: relative;
-  background: var(--card, #fff);
-  border: 2px solid var(--line, #ece6e0);
+  background: var(--panel);
+  border: 2px solid var(--line);
   border-radius: 18px;
   padding: 1rem 0.8rem;
   min-height: 6.5rem;
@@ -62,27 +71,28 @@ main.container {
   justify-content: center;
   gap: 0.4rem;
   text-align: center;
-  transition: border-color 0.15s ease;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .reel.spinning .reel-text { opacity: 0.35; }
 
 .reel.locked {
-  border-color: #d8a7a1;
-  background: #fdf7f4;
+  border-color: var(--pink);
+  background: rgba(255, 159, 207, 0.12);
 }
 
 .reel-tag {
   font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted, #8a847e);
+  color: var(--pink);
 }
 
 .reel-text {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.35;
+  color: var(--text);
 }
 
 .lock {
@@ -108,7 +118,7 @@ main.container {
 .spin-note {
   min-height: 1.2em;
   font-size: 0.85rem;
-  color: var(--muted, #8a847e);
+  color: var(--muted);
   margin: 0;
 }
 
@@ -128,6 +138,7 @@ main.container {
   line-height: 1.5;
   margin: 0 0 1rem;
   min-height: 2.5em;
+  color: var(--text);
 }
 
 .quest-actions {
@@ -140,7 +151,7 @@ main.container {
 .share-note {
   min-height: 1.2em;
   font-size: 0.85rem;
-  color: var(--muted, #8a847e);
+  color: var(--muted);
   margin: 0.6rem 0 0;
 }
 
@@ -156,8 +167,8 @@ main.container {
 }
 
 .stat-card {
-  background: var(--card, #fff);
-  border: 1px solid var(--line, #ece6e0);
+  background: var(--panel);
+  border: 1px solid var(--line);
   border-radius: 16px;
   padding: 0.8rem 0.6rem;
   text-align: center;
@@ -166,9 +177,9 @@ main.container {
   gap: 0.15rem;
 }
 
-.stat-num { font-size: 1.3rem; font-weight: 700; }
+.stat-num { font-size: 1.3rem; font-weight: 700; color: var(--text); }
 
-.stat-label { font-size: 0.75rem; color: var(--muted, #8a847e); }
+.stat-label { font-size: 0.75rem; color: var(--muted); }
 
 .log-panel {
   max-width: 34rem;
@@ -188,24 +199,25 @@ main.container {
 }
 
 .quest-log li {
-  background: var(--bg, #faf7f5);
+  background: var(--bg-soft);
   border-radius: 12px;
   padding: 0.55rem 0.75rem;
   font-size: 0.9rem;
   display: flex;
   justify-content: space-between;
   gap: 0.6rem;
+  color: var(--text);
 }
 
 .quest-log .log-date {
-  color: var(--muted, #8a847e);
+  color: var(--muted);
   font-size: 0.78rem;
   white-space: nowrap;
 }
 
 .empty-note {
   background: none !important;
-  color: var(--muted, #8a847e);
+  color: var(--muted);
   justify-content: center !important;
 }
 
@@ -220,9 +232,11 @@ main.container {
 .info-panel ul {
   margin: 0;
   padding-left: 1.2rem;
-  color: var(--muted, #8a847e);
+  color: var(--muted);
   line-height: 1.6;
 }
+
+.info-panel strong { color: var(--text); }
 
 @media (max-width: 560px) {
   .reels { grid-template-columns: 1fr; }
